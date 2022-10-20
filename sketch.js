@@ -2,7 +2,15 @@
 let clr = 'red';
 let clr_input;
 let num_input; 
+
+let font1;
+
+function preload(){
+  font1 = loadImage("fontImages/manuscript.jpg"); 
+}
+
 function setup() {
+
   createCanvas(windowWidth, windowHeight);
   background(0);
   //add clr_input to set color
@@ -22,8 +30,8 @@ function setup() {
 
 function draw() {
  
-  stroke('red');
-  line(random(width), random(height), random(width), random(height));
+  //stroke('red');
+  //line(random(width), random(height), random(width), random(height));
   //on button press
   button.mousePressed(function(){
     clr = clr_input.value(); //get value from clr_input field
@@ -32,6 +40,9 @@ function draw() {
     href = setParams(href, 'num', num); //set URL navigation to include clr value
     window.location.href = href; //navigate to URL set above
   });
+  
+  image(font1,mouseX,mouseY,frameCount,frameCount);
 
 }
+
 
